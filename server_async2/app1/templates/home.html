@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Привет друг</h1>
+<a href="{{url_login}}">Регистрация</a>
+{% if session_login %}
+<p>{{session_login}}</p>
+{% endif %}
+</body>
+</html>
