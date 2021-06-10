@@ -12,10 +12,11 @@ async def do_login(request):
     if request.method == 'POST':
         form = await request.post()
         if form['login'] == 'admin' and form['password'] == "admin":
-            session = await new_session(request)
+            session = await get_session(request)
 
             session['login'] = form['login']
             session['password'] = form['password']
+
             location = request.app.router["page_test"].url_for()
             raise web.HTTPFound(location=location)
         else:

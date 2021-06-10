@@ -1,6 +1,6 @@
 from server_async2.app1 import web
 import aiohttp_jinja2
-from aiohttp_session import get_session, new_session
+from aiohttp_session import get_session
 import time
 
 web_app1 = web.RouteTableDef()
@@ -11,11 +11,11 @@ web_app1 = web.RouteTableDef()
 async def get_handler(request):
 
     location_login = request.app.router["do_login"].url_for()
-    print(location_login)
-    session = await get_session(request)
-    session['last_visit'] = time.time()
 
-    return {}
+    session = await get_session(request)
+    session['rabotaem'] = time.time()
+
+    return {"location_login": location_login}
 
 
 @web_app1.get('/page', name='page_test')
