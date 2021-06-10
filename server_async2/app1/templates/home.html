@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Привет друг</h1>
-<a href="{{url_login}}">Регистрация</a>
-{% if session_login %}
-<p>{{session_login}}</p>
-{% endif %}
-</body>
-</html>
+{% extends 'base.html' %}
+{% block main %}
+  <main class="px-3">
+    <h1>Асинхронно для твоей страницы.</h1>
+    <p class="lead">Работаю асинхронно. Загрузка и серфмнг быстрее.</p>
+    <p class="lead">
+      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Регистрируйся</a>
+    </p>
+  </main>
+{% endblock main %}
